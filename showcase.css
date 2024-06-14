@@ -1,0 +1,251 @@
+html {
+    font-size: 70.2%;
+    
+}
+.layout{
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+/* === Nav === */
+header{
+    grid-row: 1/3;
+}
+.searchBar{
+    float: left;
+    display: block;
+    color: black;
+    text-align: left;
+    padding:14px;
+    text-decoration: none;
+    font-size: 17px;
+    margin-left: 8px;
+    margin-top: 30px;
+}
+
+.outerlogo {
+    grid-column: 2;
+    grid-row: 1/3;
+    
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    
+    /*mouse over */
+}
+
+.logo i {
+    font-size: 4rem;
+    color: transparent;
+    margin-right:-6rem;
+    margin-bottom:-1rem;
+    
+}
+
+/* pushes the text in the logo to 2 rows - remove if you want on 1 line. */
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 60px;
+} 
+
+/*targets upper text -- name -- 1st one*/
+.logo-text span:nth-child(1) {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: white;
+
+}
+
+/*targets second text in the logo */
+.logo-text span:nth-child(2) {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: white;
+    margin-top: -0.7rem;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* includes padding, borders, etc. in size */
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    /* removes underline from links*/
+}
+
+/*reduces the default size from 16px to 10px 
+makes 1rem - 10pixels */
+
+/* End of Default Styles */
+
+/* Container */
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #b8afaf;
+}
+
+.navbar {
+    width: 100%;
+    height: 10rem;
+    background-color: #202020;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    /*appears on top of everything else */
+}
+
+.menu-icon {
+    width: 4rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 50%;
+    right: 8rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 100;
+    
+}
+
+.line {
+    width: 4rem;
+    height: .2rem;
+    background-color: #ccc;
+}
+
+.navigation {
+    width: 100%;
+    height: 10vh;
+    background-color: #0b0b14;
+    position: absolute;
+    top: -100vh;
+    /* makes navigation come down from top*/
+    display: grid;
+    grid-template-columns: 0.8fr 1fr 1.4fr 1fr;
+    /* grid-auto-columns: 5% 10% 20% 57%; */
+    /* 2 columns */
+    grid-auto-rows: 90% 10%;
+    /* 2 rows for full screen */
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+    /* z-index: 50; */
+}
+.a{
+    margin:10;
+}
+
+.change .navigation {
+    top:88px;
+}
+
+.navigation a {
+    font-family: cursive;
+    font-size: 5rem;
+    color: #fff;
+    letter-spacing: 0.5rem;
+    margin-bottom: 1rem;
+    justify-self: center;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 1rem;
+    
+}
+
+/*shows the navigation on click */
+.change .navigation a {
+    opacity: 3;
+    visibility: visible;
+}
+
+/* === Nav === */
+/* === Header === */
+
+/* === Main === */
+main {
+  margin-top: 105px;
+  padding: 2rem; /* drops it down from the top a bit */
+}
+.para{
+  margin-top: 20px;
+  margin: 30px;
+  padding: 20px;
+  font-size: 20px;
+  color:#ffffff;
+  background-color: #333333;
+  grid-gap:60px;
+}
+#p1{
+    width: auto;
+    height: auto;
+}
+
+.bodycon{
+    margin-top: 120px;
+}
+
+
+/* --- Image Slider --- */
+.slider-wrapper {
+  position: relative; 
+  width: 100%; /* makes it the full page width */
+ /* max-width: 96rem; /* sets max width to 960px -- */
+  margin: 0 auto; /* centers the elements horizontally */
+
+}
+
+.slider {
+  display: flex;
+  aspect-ratio: 16 / 9; /* maintains the aspect ratio -- make sure pics are in this ratio */
+  overflow-x: auto; /* allows horizontal scrolling if there is overflow */
+  scroll-snap-type: x mandatory; /* makes the scrolling snap to the images */
+  scroll-behavior: smooth;
+  box-shadow: 0 6px 8px rgba(0,0,0, 0.75); /*image drop shadow */
+  overflow: hidden; /* hides overflow content including scrollbar */
+}
+
+.slider img {
+  flex-direction: 1 0 100%; /* ***** */
+  scroll-snap-align: start; /* snaps image to the start of the container */
+  object-fit: cover; /* image covers entire area */
+}
+
+.slider-nav {
+  display: flex;
+  column-gap: 1rem; /* gap between buttons */
+  position: absolute; 
+  bottom: 6.5rem; /* moves buttons up from bottom of the slider images */
+  left: 50%; /* centers the buttons in the slide images */
+  transform: translate(-50%); /* movement transition*/
+  z-index: 1; /* above all other content */
+}
+
+.slider-nav a {
+  width: 2.5rem; /* button sizing */
+  height: 2.5rem;
+  border-radius: 65%; /* makes buttons into circles - remove this they are squares */
+  background-color: #fff;
+  opacity: 0.5; /* fades the opacity of the button until we hover */
+  box-shadow: 0 6px 8px rgba(0,0,0, 0.75);
+  transition: opacity ease 300ms; /* hover transition */
+}
+
+.slider-nav a:hover {
+  opacity: 60%; /* change from 50% to 100% visible */
+}
+.para a{
+    color: plum;
+}
+
+  /* === Main === */
